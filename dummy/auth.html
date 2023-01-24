@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>#B48</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <div class="container right-panel-active">
+ 
+     <div class="container__form container--signup">
+        <form autocomplete="off" class="form-group" id="signup-form">
+          <h2 class="form__title">Sign Up</h2>
+          <input
+            type="text"
+            placeholder="User"
+            class="input form-control"
+            id="name"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="input form-control"
+            id="email"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input form-control"
+            id="password"
+            required
+            minlength="6"
+          />
+          <br />
+          <div class="error" id="signupError"></div>
+                <div class="error" id="signupError2"></div>
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+      </div>
+
+      <div id="signin" class="container__form container--signin">
+        <form autocomplete="off" action="#" class="form-group" id="login-form">
+          <h2 class="form__title">Sign In</h2>
+          <input
+            type="email"
+            placeholder="Email"
+            id="login-email"
+            class="form-control"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            id="login-password"
+            class="form-control"
+            required
+          />
+          <div class="error" id="loginError"></div>
+          <br />
+          <button type="submit" class="btn">Sign In</button>
+        </form>
+      </div>
+
+      <div class="container__overlay">
+        <div class="overlay">
+          <div class="overlay__panel overlay--left">
+            <button class="btn" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay__panel overlay--right">
+            <button class="btn" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="auth.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBYN0svB3mfOI3EBKWtEvoQdYVgq_1pXng",
+      authDomain: "login-6c6d9.firebaseapp.com",
+      projectId: "login-6c6d9",
+      storageBucket: "login-6c6d9.appspot.com",
+      messagingSenderId: "673523961855",
+      appId: "1:673523961855:web:f0106158e42ebdc0f061ca",
+      measurementId: "G-WDE1MQXCXB",
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+</html>

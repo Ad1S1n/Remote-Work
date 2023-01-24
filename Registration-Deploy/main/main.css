@@ -1,0 +1,79 @@
+html {
+  font-size: 22px;
+  height: 100vh;
+  width: 100vw;
+}
+a {
+  color: #fff;
+}
+body {
+  padding: 0rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0em;
+  overflow: visible;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+  background-color: #171424;
+}
+
+.card {
+  background-color: #171424;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+iframe {
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+}
+button {
+  background: #fff;
+  border: none;
+  color: #222;
+  padding: 12px;
+  border-radius: 7px;
+  align-self: flex-end;
+  margin: 10px 10px 10px 0;
+  box-shadow: 0px 10px 13px -12px rgba(0, 0, 0, 0.3);
+  outline: none;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+body button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 23px -17px rgba(0, 0, 0, 0.3);
+}
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  body {
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+  }
+}
+
+.welcomeinfo {
+  padding: 0 1rem;
+}
+
+.welcomeheading,
+.welcomespeech {
+  font-family: "Poppins";
+}
+@media only screen and (max-width: 600px){
+  html{
+    font-size: 15px;
+  }
+}

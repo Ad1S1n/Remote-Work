@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Arvo'>
+    <title>404 error | CodeCeTra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const container = document.querySelector('.container') 
+   axios.get("https://script.google.com/macros/s/AKfycbzXiDLmYnjuH0GQIaFwsaR8B3Nwlx_8p3HKDVCppaXah5AB_Dw28COHWN5JDIvqw_QIpw/exec")
+    .then(response => {
+      let array = response.data;
+      console.log(array)
+      for(i=0; i<array.length; i++){
+        container.innerHTML +=
+    `<main class="main">
+    <div class="card-container">
+      <div class="code">
+          <div class="code-image">
+            <img src="${array[i][2]}" alt="Code Image" />
+          </div>
+          <div class="description">
+            <h2>${array[i][0]}</h2>
+            <p>${array[i][1]}</p>
+            <video src="${array[i][3]}" controls="true"></video>
+          </div>
+        </div>  
+      </div>
+      </main>
+    `
+      }
+    })  
+  </script>
+
+</body>
+</html>

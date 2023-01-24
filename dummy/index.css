@@ -1,0 +1,280 @@
+:root{
+    --blue: #0367a6;  
+    --lightblue: #008997; 
+}
+
+
+@import url('https://font.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 1000px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    Left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    background: #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 1s;
+}
+
+header.sticky {
+    height: 88px;
+}
+
+header .banner {
+    position: absolute;
+    top: 0;
+    Left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+header.sticky .banner {
+    opacity: 0.5;
+}
+header .logo {
+    position: absolute;
+    top: 50%;
+    Left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15vw;
+    color:  #fff;
+    font-weight: 700;
+    transition: 1s;
+    text-decoration: none;
+    z-index: 1;
+}
+
+header.sticky .logo {
+    position: absolute;
+    font-size: 2em;
+    left: 100px;
+    transform: translate(0, -50%);
+}
+
+nav {
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    transition: 0.25s;
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+header.sticky nav ul {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.75s;
+    visibility: visible;
+    }
+
+nav ul li {
+    padding-right: 20px;
+    list-style: none;
+}
+
+section {
+    margin-top: 50vh;
+    padding: 100px;
+}
+
+section h2 {
+    font-size: 3em;
+}
+
+section p {
+    font-size: 0.4em;
+}
+
+/* now,make it responsive */
+@media (max-width: 991px) {
+
+    section,
+    header {
+        padding: 40px;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    header.sticky .logo {
+        left: 40px;
+    }
+
+    header.sticky .banner {
+        opacity: 0;
+    }
+
+    nav ul {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav.active ul {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 88px);
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    header.sticky .toggle {
+        position: fixed;
+        top: 15px;
+        right: 40px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        background: #fff url(images/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .toggle.active {
+        background: #fff url(images/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+.btn {  
+    background-color: var(--blue);  
+    background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);  
+    border-radius: 20px;  
+    border: 1px solid var(--blue);  
+    color: white;  
+    cursor: pointer;  
+    font-size: 0.8rem;  
+    font-weight: bold;  
+    letter-spacing: 0.1rem;  
+    padding: 0.9rem 4rem;  
+    text-transform: uppercase;  
+    transition: transform 80ms ease-in;  
+    } 
+
+
+
+    button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+      }
+      button.learn-more {
+        width: 12rem;
+        height: auto;
+      }
+      button.learn-more .circle {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
+        border-radius: 1.625rem;
+      }
+      button.learn-more .circle .icon {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: #fff;
+      }
+      button.learn-more .circle .icon.arrow {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        left: 0.625rem;
+        width: 1.125rem;
+        height: 0.125rem;
+        background: none;
+      }
+      button.learn-more .circle .icon.arrow::before {
+        position: absolute;
+        content: "";
+        top: -0.25rem;
+        right: 0.0625rem;
+        width: 0.625rem;
+        height: 0.625rem;
+        border-top: 0.125rem solid #fff;
+        border-right: 0.125rem solid #fff;
+        transform: rotate(45deg);
+      }
+      button.learn-more .button-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        color: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      button:hover .circle {
+        width: 100%;
+      }
+      button:hover .circle .icon.arrow {
+        background: #fff;
+        transform: translate(1rem, 0);
+      }
+      button:hover .button-text {
+        color: #fff;
+      }
+
+
+
+
+      
+      .layer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        height: 100%;
+    }
+     #parallax-text{
+        position: relative;
+        color: rgb(0, 0, 0) ;
+        font-size: 12em;
+    
+     }

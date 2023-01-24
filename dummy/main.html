@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="hero">
+ 
+      <nav>
+        <img src="images/logo.png" class="logo" />
+        <img src="images/user.png" alt="" class="user-pic" onclick="toggleMenu()" />
+
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="images/user.png" />
+              <h3>Aditya Singh</h3>
+            </div>
+            <hr />
+            <a href="#" class="sub-menu-link">
+              <img src="images/profile.png" />
+              <p>Edit Profile</p>
+              <span>></span>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <img src="images/setting.png" />
+              <p>Settings</p>
+              <span>></span> </a
+            ><a href="#" class="sub-menu-link">
+              <img src="images/help.png" />
+              <p>Help</p>
+              <span>></span> </a
+            ><a href="#" class="sub-menu-link">
+              <img src="images/logout.png" />
+              <p>Logout</p>
+              <span>></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <button class="btn" onclick="logout()">LOGOUT</button>
+    </div>
+  </body>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+     <!-- TODO: Add SDKs for Firebase products that you want to use -->
+     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+   
+     <script>
+       var firebaseConfig = {
+         apiKey: "AIzaSyBYN0svB3mfOI3EBKWtEvoQdYVgq_1pXng",
+         authDomain: "login-6c6d9.firebaseapp.com",
+         projectId: "login-6c6d9",
+         storageBucket: "login-6c6d9.appspot.com",
+         messagingSenderId: "673523961855",
+         appId: "1:673523961855:web:f0106158e42ebdc0f061ca",
+         measurementId: "G-WDE1MQXCXB",
+       };
+   
+       firebase.initializeApp(firebaseConfig);
+   
+       const auth = firebase.auth();
+       const db = firebase.firestore();
+     </script>
+  <script src="main.js"></script>
+</html>
