@@ -9,19 +9,30 @@
   </head>
 
   <body>
-      <div class="card">
-          <img src="
-          https://picsum.photos/200/300" />
-          <h2>Best Course in the World</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci
-            repellat tempore quae necessitatibus expedita, consequuntur,
-            inventore, exercitationem laudantium impedit debitis iste quis
-            architecto quo sapiente deleniti ipsum harum aut officia.
-          </p>
-            <button id="price">
-              $20
-            </button>
+      <div class="main">
+        <ul class="cards"></ul>
       </div>
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const cards = document.querySelector('.cards') 
+   axios.get("https://script.google.com/macros/s/AKfycbzXiDLmYnjuH0GQIaFwsaR8B3Nwlx_8p3HKDVCppaXah5AB_Dw28COHWN5JDIvqw_QIpw/exec")
+    .then(response => {
+      let array = response.data;
+      console.log(array)
+      for(i=0; i<array.length; i++){
+        cards.innerHTML +=
+    `<li class="cards_item">
+		<div class="card">
+		  <div class="card_image"><img src="${array[i][0]}"></div>
+		  <div class="card_content">
+			<h2 class="card_title">${array[i][1]}</h2>
+			<p class="card_text">${array[i][2]}</p>
+			<button class="btn card_btn">$${array[i][3]}</button>
+		  </div>
+		</div>
+	  </li>`}})  
+  </script>
 </html>
